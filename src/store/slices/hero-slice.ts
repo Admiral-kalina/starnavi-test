@@ -1,6 +1,8 @@
 import {createSlice, createAsyncThunk, PayloadAction} from '@reduxjs/toolkit';
-import { Hero, ExpandedHero} from '../types/hero.dto';
-import {getFilms, getHeroById, getHeroesByPage, getStarshipById} from "../services/hero-service";
+import { Hero, ExpandedHero} from '../../types/hero.dto';
+import { getHeroById, getHeroesByPage, } from "../../services/hero-service/hero-service";
+import {getFilms} from "../../services/film-service/film-service";
+import {getStarshipById} from "../../services/starship-service/starship-service";
 
 interface HeroState {
   heroes: Hero[];
@@ -28,7 +30,6 @@ const initialState: HeroState = {
   isLastPage: false,
 };
 
-// Thunks for async actions
 export const loadHeroes = createAsyncThunk<{ heroes: Hero[], next: string | null }, number, { rejectValue: string }>(
   'heroes/fetchHeroes',
   async (page, {rejectWithValue}) => {
@@ -49,7 +50,6 @@ export const loadHeroDetails = createAsyncThunk<ExpandedHero, number, { rejectVa
     try {
       const hero = await getHeroById(heroId);
       if (!hero) {
-        // Return a rejection value if no data is found
         return rejectWithValue('Hero not found');
       }
       const filmsResponse = await getFilms();

@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
-import heroReducer from '../slices/hero-slice';
+import heroReducer from './slices/hero-slice';
 
 export const store = configureStore({
   reducer: {

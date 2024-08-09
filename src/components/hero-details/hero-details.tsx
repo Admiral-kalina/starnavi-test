@@ -97,7 +97,7 @@ export const HeroDetails: React.FC<HeroDetailsProps> = ({ selectedHero }) => {
         <button onClick={handleClick} className={styles.backButton}>
           Back to Heroes
         </button>
-        <ReactFlow nodes={nodes} edges={edges} onConnect={onConnect} fitView />
+        <ReactFlow  nodes={nodes} edges={edges} onConnect={onConnect} fitView />
       </div>
     </ReactFlowProvider>
   );

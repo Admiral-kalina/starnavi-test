@@ -2,10 +2,9 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { MemoryRouter } from 'react-router-dom';
-import { HeroDetails } from './hero-details';
-import { mockHero } from '../../mock-data/hero-details';
+import { HeroDetails } from '../../../components/hero-details/hero-details';
+import { mockHero } from '../../__mock__/hero-details';
 
-// Mock useNavigate from react-router-dom
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useNavigate: jest.fn(),

@@ -1,7 +1,7 @@
 import axios from "./config";
-import { HeroesPageParam, HeroByIdParam } from "../types/hero.dto";
+import {HeroByIdParam, HeroesByPageParam,} from "./types";
 
-type ParamsType = HeroesPageParam | HeroByIdParam | undefined;
+type ParamsType = HeroesByPageParam | HeroByIdParam | undefined;
 
 class Api {
   async get<T>(endpoint: string, params?: ParamsType): Promise<T> {

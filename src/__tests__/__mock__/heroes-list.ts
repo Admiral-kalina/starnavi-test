@@ -1,4 +1,4 @@
-import {Hero} from "../types/hero.dto";
+import {Hero} from "../../types/hero.dto";
 
 export const mockHeroesList: Hero[] = [
   {

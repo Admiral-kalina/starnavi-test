@@ -2,7 +2,7 @@ import {useEffect} from "react";
 import {useSelector} from "react-redux";
 import {useNavigate, useParams} from "react-router-dom";
 import {RootState, useAppDispatch} from "../../store/store";
-import {loadHeroDetails} from "../../slices/hero-slice";
+import {loadHeroDetails} from "../../store/slices/hero-slice";
 import {HeroDetails} from "../../components/hero-details/hero-details";
 import {Loader} from "../../components/loader/loader";
 import {Layout} from "../../components/layout/layout";
@@ -19,8 +19,7 @@ const HeroPage = () => {
   } = useSelector((state: RootState) => state.heroes);
 
   useEffect(() => {
-    // Validate heroId and navigate to error page if it's not a valid
-    if (!heroId) {
+    if (!heroId || isNaN(parseInt(heroId, 10))) {
       navigate('/not-found-page');
       return;
     }

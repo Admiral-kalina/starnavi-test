@@ -1,9 +1,8 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { MemoryRouter } from 'react-router-dom';
-import { HeroList } from './hero-list';
-import { mockHeroesList } from '../../mock-data/heroes-list';
+import { HeroList } from '../../../components/hero-list/hero-list';
+import {mockHeroesList} from "../../__mock__/heroes-list";
 
 describe('HeroList Component', () => {
   const renderComponent = (

@@ -1,4 +1,4 @@
-import {ExpandedHero} from "../types/hero.dto";
+import {ExpandedHero} from "../../types/hero.dto";
 
 export const mockHero: ExpandedHero = {
   id: 18,
