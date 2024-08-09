@@ -1,0 +1,51 @@
+.heroListWrapper {
+  padding: 20px;
+}
+
+.heroList {
+  max-width: 650px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.heroItem {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.heroImage {
+  width: 100%;
+  max-width: 150px;
+  border-radius: 8px;
+}
+
+.loadMoreButton {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
